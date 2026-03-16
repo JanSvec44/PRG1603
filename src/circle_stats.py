@@ -7,8 +7,8 @@ def euclid_distance(x1, y1, x2, y2):
     return math.sqrt(((x2 - x1)**2 + (y2 - y1)**2))
 
 def has_intersection(circle1, circle2):
-    x1, y1, r1 = circle1.values()
-    x2, y2, r2 = circle2.values()
+    x1, y1, r1 = circle1
+    x2, y2, r2 = circle2
     e_distance = euclid_distance(x1,y1,x2,y2)
     r_sum = radius_sum(r1,r2)
 
