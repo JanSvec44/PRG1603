@@ -1,5 +1,6 @@
 import pytest
-from circle_stats import has_intersection
+
+import circle_stats
 
 
 @pytest.mark.parametrize(
@@ -14,3 +15,14 @@ from circle_stats import has_intersection
 )
 def test_has_intersection(circle_1, circle_2, expected):
     assert has_intersection(circle_1, circle_2) == expected
+
+@pytest.mark.parametrize(
+    ("r1", "r2", "expected"),
+    [
+        (2, 3, 5),
+        (5, 4, 9),
+        (3, 4, 7)
+    ],
+)
+def test_radius_sum(r1, r2, expected):
+    assert radius_sum(r1, r2) == expected
